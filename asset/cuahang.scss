@@ -1,0 +1,319 @@
+$background-slide: #FFF5F2;
+$logo-color: #e47277;
+$logo-name: #634344;
+$background-color: #fff;
+$text-color: #c7bebe;
+$black-color: rgb(32, 31, 31);
+$background-category: #F4F6FA;
+$button-color: #da3f06;
+$facebook-color:#0E8CF1;
+.nav {
+  width: 100vw;
+  position: fixed;
+  background-color: $background-color;
+  height: 10rem;
+  line-height: 10rem;
+  z-index: 100;
+  box-shadow: 0 5px 10px 0px $text-color;
+  &_logo {
+    width: calc(100% / 6);
+    height: 10rem;
+  }
+  &_list {
+    display: flex;
+    justify-content: space-between;
+  }
+  &_name {
+    font-family: "Fredoka One", cursive;
+    font-size: 5rem;
+    color: $logo-color;
+  }
+  &_bakery {
+    font-family: "Oleo Script Swash Caps", cursive;
+    font-size: 5rem;
+  }
+  &_menu {
+    font-weight: 450;
+    width: calc(100% / 2);
+    cursor: pointer;
+    &-list {
+      display: flex;
+      justify-content: space-between;
+    }
+    &-link {
+      color: $black-color;
+      &:hover {
+        cursor: pointer;
+        color: $logo-color;
+      }
+    }
+    &-item {
+      font-size: 2rem;
+      position: relative;
+      &:hover {
+        .nav_menu-item-category {
+          position: absolute;
+          display: block;
+        }
+        color: $logo-color;
+      }
+      &-category {
+        display: none;
+        width: 30rem;
+        padding: 0 2rem;
+        background-color: $background-category;
+        border: 1px solid $text-color;
+        animation: up 0.3s linear;
+        &_product {
+          line-height: 4rem;
+          &-link {
+            color: $black-color;
+            font-weight: 450;
+            cursor: pointer;
+            &:hover {
+              color: $logo-color;
+            }
+          }
+        }
+      }
+    }
+  }
+  &_right {
+    width: calc(100% / 6);
+    display: flex;
+    justify-content: flex-end;
+    cursor: pointer;
+    transition: all 0.2s linear;
+    &-icon {
+      font-size: 2rem;
+      &:not(:last-child) {
+        margin-right: 2.5rem;
+      }
+      &:hover {
+        color: #e47277;
+      }
+    }
+  }
+}
+.banner {
+  position: absolute;
+  top:10rem;
+  width: 100%;
+  height: 50rem;
+  &_image{
+    position: relative;
+    width: 100%;
+    height: 100%;
+    background-repeat: no-repeat;
+    background-size: cover;
+    &:after{
+      position: absolute;
+      content: "";
+      z-index: 25;
+      width: 100%;
+      height: 100%;
+      top:0;
+      left: 0;
+      background-color: $black-color;
+      opacity: 0.5;
+    }
+  }
+  &_text{
+    position: absolute;
+    top:40%;
+    z-index: 30;
+    color: $logo-color;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 10rem;
+    font-family: 'Sonsie One', cursive;
+  }
+}
+.product{
+  position: absolute;
+  top:60rem;
+  width: 100%;
+  &_list{
+    display: flex;
+    justify-content: space-between;
+    &-group{
+      width: calc(100% / 2 - 1rem);
+      background-color: red;
+      &-big{
+        width: 100%;
+        height: 30rem;
+        margin-bottom: 2rem;
+      }
+      &-small{
+        width: 99%;
+        height: 60rem;
+        margin-bottom: 2rem;
+      }
+      & img{
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+
+    }
+  }
+}
+.Exclusive {
+  position: absolute;
+  top: 200rem;
+  width: 100vw;
+  padding-top: 12rem;
+  &_text {
+    font-size: 3rem;
+    margin-bottom: 2rem;
+  }
+  &_title {
+    font-size: 5rem;
+    font-family: "Fredoka One", cursive;
+    margin-bottom: 9rem;
+  }
+  &_slides {
+    position: relative;
+    &-arrow {
+      position: absolute;
+      z-index: 1;
+      top: 50%;
+      left: -7rem;
+      font-size: 3rem;
+      display: flex;
+      color: $button-color;
+      justify-content: space-between;
+      width: 110%;
+      &-icon {
+        width: 5rem;
+        height: 5rem;
+        background-color: red;
+        &-left,&-right{
+          cursor: pointer;
+        }
+      }
+    }
+    &-list {
+      display: flex;
+      margin: 0px auto;
+      width: 144rem;
+      overflow-x: hidden;
+      justify-content: left;
+      background-color: $background-color;
+      &-item {
+        position: relative;
+        min-width: calc(100% / 3 - 2rem);
+        left: 0.5rem;
+        margin-right: 2rem;
+        height: 58rem;
+        background-color: $background-slide;
+        border-bottom-right-radius: 7rem;
+        transition: all 0.25s linear;
+        &-image {
+          position: absolute;
+          width: 100%;
+          height: 33rem;
+          z-index: 10;
+          margin: 0px auto;
+          background-color: transparent;
+          border: 2.5rem solid $background-slide;
+          border-bottom-right-radius: 8rem;
+        }
+        &-link {
+          position: absolute;
+          height: 32rem;
+          z-index: 1;
+          border-bottom-right-radius: 7rem;
+          object-fit: cover;
+          transition: all 0.5s linear;
+        }
+        &:hover {
+          .Exclusive_slides-list-item-link {
+            transform: scale(0.9);
+          }
+          .Exclusive_slides-list-item-order {
+            transform: translateY(-1rem);
+          }
+          .Exclusive_slides-list-item-see{
+            opacity: 1;
+            transform: translateY(5rem);
+          }
+        }
+        &-describe {
+          position: absolute;
+          width: 100%;
+          top: 33rem;
+          margin: 0px auto;
+        }
+        &-name {
+          font-size: 3rem;
+          font-family: "Fredoka One", cursive;
+          line-height: 2;
+        }
+        &-introduce {
+          font-size: 2rem;
+          line-height: 1.3;
+          margin-bottom: 3.5rem;
+        }
+        &-order {
+          width: 60%;
+          height: 6rem;
+          background-color: $button-color;
+          color: $background-color;
+          border-radius: 3rem;
+          border-color: $button-color;
+          font-size: 2.2rem;
+          cursor: pointer;
+          box-shadow: 0 10px 2px -6px $logo-name;
+          transition: all 0.5s linear;
+          &:active {
+            box-shadow: none;
+          }
+        }
+        &-see{
+          opacity: 0;
+          position: absolute;
+          z-index: 21;
+          top:15%;
+          left:30%;
+          width: 40%;
+          height: 5rem;
+          border-radius: 25px;
+          background-color: $background-color;
+          cursor: pointer;
+          transition: all 0.5s linear;
+          &:hover{
+            .Exclusive_slides-list-item-see-text{
+              transform: translateY(-2rem);
+              opacity: 0;
+            }
+            .Exclusive_slides-list-item-see-icon{
+              opacity: 1;
+              visibility: visible;
+              height: 5rem;
+              color: $background-color;
+              line-height: 5rem;
+              background-color: $button-color;
+              transform: translateY(-5rem);
+            }
+          }
+          &-text{
+            font-size: 2.2rem;
+            line-height: 5rem;
+            opacity: 1;
+            transition: all 0.25s linear;
+          }
+          &-icon{
+            width: 100%;
+            height: 0;
+            font-size: 2.2rem;
+            border-radius: 25px;
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.3s linear;
+          }
+        }
+      }
+    }
+  }
+}

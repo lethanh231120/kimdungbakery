@@ -1,0 +1,30 @@
+html{
+  font-size: 62.5%;
+}
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body{
+  font-size: 1.4rem;
+  line-height: 1;
+  color:black;
+  font-family: 'Roboto', sans-serif;
+  overflow-x: hidden;
+}
+img{
+  width:100%;
+  display: flex;
+  object-fit: cover;
+  flex-direction: row;
+}
+a{
+  text-decoration: none;
+}
+.container{
+  max-width: 144rem;
+  padding: 0 1rem;
+  margin:0px auto ;
+  text-align: center;
+}
